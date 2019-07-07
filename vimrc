@@ -1,4 +1,5 @@
 set nocompatible " 关闭 vi 兼容模式
+set mouse=a
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -29,7 +30,12 @@ filetype plugin indent on
 let mapleader = ","
 set history=400
 syntax on " 自己主动语法高亮
+
+let g:solarized_termcolors=256
+let g:solarized_termtrans=1
+set background=dark
 colorscheme solarized"  设定配色方案
+
 set number " 显示行号
 set ruler " 打开状态栏标尺
 set shiftwidth=4 " 设定 << 和 >> 命令移动时的宽度为 4
@@ -158,7 +164,8 @@ nmap <Leader>s :vimgrep<space>//gj<space>**
 " 切换buffer
 nmap <Leader>p :bp<CR>
 nmap <Leader>n :bn<CR>
-
+" 打开控制台，在右侧边
+nnoremap <Leader>t :vertical terminal<CR>
 " 执行外部命令
 nnoremap <Leader>r :RunInInteractiveShell<space>
 " 运行外部命令prettier格式化

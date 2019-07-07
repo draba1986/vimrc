@@ -30,6 +30,7 @@ filetype plugin indent on
 let mapleader = ","
 set history=400
 syntax on " 自己主动语法高亮
+set t_Co=256
 
 let g:solarized_termcolors=256
 let g:solarized_termtrans=1
@@ -43,10 +44,14 @@ set softtabstop=4 " 使得按退格键时能够一次删掉 4 个空格
 set tabstop=4 " 设定 tab 长度为 4
 set expandtab
 set nobackup " 覆盖文件时不备份
+set autoread " 打开文件监视。如果在编辑过程中文件发生外部改变（比如被别的编辑器编辑了），就会发出提示。
 set noswapfile " 不产生swap文件
 "set autochdir " 自己主动切换当前文件夹为当前文件所在的文件夹
-set list listchars=tab:»·,trail:·
+set list
+set listchars=tab:»■,trail:■
 set textwidth=160
+set scrolloff=5
+set sidescrolloff=15
 set colorcolumn=+1
 set matchpairs+=<:>
 
@@ -63,9 +68,10 @@ set hlsearch " 搜索时高亮显示被找到的文本
 set noerrorbells " 关闭错误信息响铃
 set novisualbell " 关闭使用可视响铃取代呼叫
 set t_vb= " 置空错误铃声的终端代码
-" set showmatch " 插入括号时。短暂地跳转到匹配的相应括号
-" set matchtime=2 " 短暂跳转到匹配括号的时间
+set showmatch " 插入括号时。短暂地跳转到匹配的相应括号
+set matchtime=2 " 短暂跳转到匹配括号的时间
 set magic " 设置魔术
+set spell spelllang=en_us
 set hidden " 同意在有未保存的改动时切换缓冲区，此时的改动由 vim 负责保存
 set guioptions-=T " 隐藏工具栏
 set guioptions-=m " 隐藏菜单条

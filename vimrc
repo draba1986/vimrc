@@ -48,7 +48,7 @@ set autoread " 打开文件监视。如果在编辑过程中文件发生外部�
 set noswapfile " 不产生swap文件
 "set autochdir " 自己主动切换当前文件夹为当前文件所在的文件夹
 set list
-set listchars=tab:»■,trail:■
+set listchars=tab:>-,trail:-
 set textwidth=160
 set scrolloff=5
 set sidescrolloff=15
@@ -113,24 +113,15 @@ if has("win32")
 endif
 
 " 配置多语言环境
-if has("multi_byte")
-    " UTF-8 编码
-    set encoding=utf-8
-    set termencoding=utf-8
-    set formatoptions+=mM
-    set fencs=utf-8,gbk
-
-    if v:lang =~?'^\(zh\)\|\(ja\)\|\(ko\)'
-        set ambiwidth=double
-    endif
-    
-    if has("win32")
-        source $VIMRUNTIME/delmenu.vim
-        source $VIMRUNTIME/menu.vim
-        language messages zh_CN.utf-8
-    endif
-else
-    echoerr "Sorry, this version of (g)vim was not compiled with +multi_byte"
+set encoding=utf-8
+set termencoding=utf-8
+set formatoptions+=mM
+set fencs=utf-8,gbk
+set ambiwidth=double
+if has("win32")
+    source $VIMRUNTIME/delmenu.vim
+    source $VIMRUNTIME/menu.vim
+    language messages zh_CN.utf-8
 endif
 
 " Buffers操作快捷方式!

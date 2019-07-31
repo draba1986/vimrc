@@ -144,15 +144,16 @@ endfunction
 " 用户文件夹变量$VIMFILES
 if MySys() == "windows"
     let $VIMFILES = $VIM.'/vimfiles'
+    set guifont=Hack:h13
 elseif MySys() == "linux"
     let $VIMFILES = $HOME.'/.vim'
+    set guifont=Hack\ 13
 endif
 
 " 设定doc文档文件夹
 let helptags=$VIMFILES.'/doc'
 
 " 设置字体 以及中文支持
-set guifont=Hack:h14
 
 if has("win32")
     source $VIMRUNTIME/delmenu.vim
